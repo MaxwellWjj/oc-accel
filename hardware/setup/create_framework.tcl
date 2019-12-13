@@ -260,8 +260,9 @@ if { $fpga_card == "AD9V3" } {
 # HBM XDCs
 if { $hbm_used == "TRUE" } {
   add_files -fileset constrs_1 -norecurse $top_xdc_dir/snap_hbm_timing.xdc
-  set_property used_in_synthesis true [get_files $top_xdc_dir/snap_hbm_timing.xdc]
+  set_property used_in_synthesis false [get_files $top_xdc_dir/snap_hbm_timing.xdc]
   set_property used_in_implementation true [get_files $top_xdc_dir/snap_hbm_timing.xdc]
+  #set_property STEPS.SYNTH_DESIGN.TCL.POST {$top_xdc_dir/hbm_post_synth.tcl} [get_runs synth_1]
 }
 
 
