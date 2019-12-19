@@ -176,6 +176,11 @@ if { [file exists $action_tcl] == 1 } {
   }
 }
 
+# AD9H7 HBM strategy tcl
+if { ($fpga_card == "AD9H7") && ($hbm_used == "TRUE") } {
+  puts "                        sourcing hbm_strategy.tcl"
+  source $top_xdc_dir/hbm_strategy.tcl
+}
 
 add_files -scan_for_includes $action_hw_dir/ >> $log_file
 
@@ -260,9 +265,8 @@ if { $fpga_card == "AD9V3" } {
 # HBM XDCs
 if { $hbm_used == "TRUE" } {
   add_files -fileset constrs_1 -norecurse $top_xdc_dir/snap_hbm_timing.xdc
-  set_property used_in_synthesis false [get_files $top_xdc_dir/snap_hbm_timing.xdc]
+  set_property used_in_synthesis true [get_files $top_xdc_dir/snap_hbm_timing.xdc]
   set_property used_in_implementation true [get_files $top_xdc_dir/snap_hbm_timing.xdc]
-  #set_property STEPS.SYNTH_DESIGN.TCL.POST {$top_xdc_dir/hbm_post_synth.tcl} [get_runs synth_1]
 }
 
 

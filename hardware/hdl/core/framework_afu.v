@@ -2289,5 +2289,130 @@ assign hbm_ctrl_wdata_parity = {{^(hbm_ctrl_wdata[255:248])},{^(hbm_ctrl_wdata[2
 
 `endif
 
+top_ila1 hbm_rd (
+  .clk(clock_act),
+  .probe0({
+    hbm_ctrl_arvalid,   //1
+    hbm_ctrl_aready,    //1
+    hbm_ctrl_araddr,    //33
+    hbm_ctrl_arlen,     //8
+    hbm_ctrl_arsize,    //3
+    hbm_ctrl_arburst,   //2
+    hbm_ctrl_arid,      //6
+    hbm_ctrl_rvalid,    //1
+    hbm_ctrl_rready,    //1
+    hbm_ctrl_rresp,     //2
+    hbm_ctrl_rlast,     //1
+    hbm_ctrl_rdata,     //256
+    hbm_ctrl_rid        //6  
+  })
+);
+
+top_ila2 hbm_wr (
+  .clk(clock_act),
+  .probe0({
+    hbm_ctrl_apb_complete, //1
+    hbm_ctrl_awvalid,   //1
+    hbm_ctrl_aweady,    //1
+    hbm_ctrl_awaddr,    //33
+    hbm_ctrl_awlen,     //8
+    hbm_ctrl_awsize,    //3
+    hbm_ctrl_awburst,   //2
+    hbm_ctrl_awid,      //6
+    hbm_ctrl_wvalid,    //1
+    hbm_ctrl_wready,    //1
+    hbm_ctrl_wlast,     //1
+    hbm_ctrl_wdata,     //256
+    hbm_ctrl_wstrb,     //32
+    hbm_ctrl_bid,       //6
+    hbm_ctrl_bvalid,    //1
+    hbm_ctrl_bready,    //1
+    hbm_ctrl_bresp      //2  
+  })
+);
+
+top_ila3 slice_rd (
+  .clk(clock_act),
+  .probe0({
+    hbm_slice_arvalid,   //1
+    hbm_slice_aready,    //1
+    hbm_slice_araddr,    //33
+    hbm_slice_arlen,     //8
+    hbm_slice_arsize,    //3
+    hbm_slice_arburst,   //2
+    hbm_slice_arid,      //6
+    hbm_slice_rvalid,    //1
+    hbm_slice_rready,    //1
+    hbm_slice_rresp,     //2
+    hbm_slice_rlast,     //1
+    hbm_slice_rdata,     //256
+    hbm_slice_rid        //6  
+  })
+);
+
+top_ila4 slice_wr (
+  .clk(clock_act),
+  .probe0({
+    hbm_slice_awvalid,   //1
+    hbm_slice_aweady,    //1
+    hbm_slice_awaddr,    //33
+    hbm_slice_awlen,     //8
+    hbm_slice_awsize,    //3
+    hbm_slice_awburst,   //2
+    hbm_slice_awid,      //6
+    hbm_slice_wvalid,    //1
+    hbm_slice_wready,    //1
+    hbm_slice_wlast,     //1
+    hbm_slice_wdata,     //256
+    hbm_slice_wstrb,     //32
+    hbm_slice_bid,       //6
+    hbm_slice_bvalid,    //1
+    hbm_slice_bready,    //1
+    hbm_slice_bresp      //2  
+  })
+);
+
+top_ila5 act_rd (
+  .clk(clock_act),
+  .probe0({
+    act_axi_card_mem0_arvalid,   //1
+    act_axi_card_mem0_aready,    //1
+    act_axi_card_mem0_araddr,    //33
+    act_axi_card_mem0_arlen,     //8
+    act_axi_card_mem0_arsize,    //3
+    act_axi_card_mem0_arburst,   //2
+    act_axi_card_mem0_arid,      //4
+    act_axi_card_mem0_rvalid,    //1
+    act_axi_card_mem0_rready,    //1
+    act_axi_card_mem0_rresp,     //2
+    act_axi_card_mem0_rlast,     //1
+    act_axi_card_mem0_rdata,     //512
+    act_axi_card_mem0_rid        //4  
+  })
+);
+
+top_ila6 act_wr (
+  .clk(clock_act),
+  .probe0({
+    act_axi_card_mem0_awvalid,   //1
+    act_axi_card_mem0_aweady,    //1
+    act_axi_card_mem0_awaddr,    //33
+    act_axi_card_mem0_awlen,     //8
+    act_axi_card_mem0_awsize,    //3
+    act_axi_card_mem0_awburst,   //2
+    act_axi_card_mem0_awid,      //4
+    act_axi_card_mem0_wvalid,    //1
+    act_axi_card_mem0_wready,    //1
+    act_axi_card_mem0_wlast,     //1
+    act_axi_card_mem0_wdata,     //512
+    act_axi_card_mem0_wstrb,     //64
+    act_axi_card_mem0_bid,       //4
+    act_axi_card_mem0_bvalid,    //1
+    act_axi_card_mem0_bready,    //1
+    act_axi_card_mem0_bresp      //2  
+  })
+);
+
+
 endmodule
 

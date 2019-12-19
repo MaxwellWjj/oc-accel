@@ -535,6 +535,61 @@ if { $create_hbm_ad9h7 == "TRUE" } {
   export_simulation    -of_objects             [get_files $ip_dir/axi_hbm_register_slice/axi_hbm_register_slice.xci] -directory $ip_dir/ip_user_files/sim_scripts -force >> $log_file
 }
 
+# ILA
+  puts "                        generating IP top_ila1"
+  create_ip -name ila -vendor xilinx.com -library ip -version 6.2 -module_name top_ila1 -dir $ip_dir  >> $log_file
+  set_property -dict [list CONFIG.C_PROBE0_WIDTH {321} CONFIG.C_DATA_DEPTH {1024} CONFIG.C_TRIGOUT_EN {false} CONFIG.C_TRIGIN_EN {false}] [get_ips top_ila1]
+  set_property generate_synth_checkpoint false [get_files $ip_dir/top_ila1/top_ila1.xci]
+  generate_target {instantiation_template}     [get_files $ip_dir/top_ila1/top_ila1.xci] >> $log_file
+  generate_target all                          [get_files $ip_dir/top_ila1/top_ila1.xci] >> $log_file
+  export_ip_user_files -of_objects             [get_files $ip_dir/top_ila1/top_ila1.xci] -no_script -force >> $log_file
+  export_simulation    -of_objects             [get_files $ip_dir/top_ila1/top_ila1.xci] -directory $ip_dir/ip_user_files/sim_scripts -force >> $log_file
+
+  puts "                        generating IP top_ila2"
+  create_ip -name ila -vendor xilinx.com -library ip -version 6.2 -module_name top_ila2 -dir $ip_dir  >> $log_file
+  set_property -dict [list CONFIG.C_PROBE0_WIDTH {356} CONFIG.C_DATA_DEPTH {1024} CONFIG.C_TRIGOUT_EN {false} CONFIG.C_TRIGIN_EN {false}] [get_ips top_ila2]
+  set_property generate_synth_checkpoint false [get_files $ip_dir/top_ila2/top_ila2.xci]
+  generate_target {instantiation_template}     [get_files $ip_dir/top_ila2/top_ila2.xci] >> $log_file
+  generate_target all                          [get_files $ip_dir/top_ila2/top_ila2.xci] >> $log_file
+  export_ip_user_files -of_objects             [get_files $ip_dir/top_ila2/top_ila2.xci] -no_script -force >> $log_file
+  export_simulation    -of_objects             [get_files $ip_dir/top_ila2/top_ila2.xci] -directory $ip_dir/ip_user_files/sim_scripts -force >> $log_file
+
+  puts "                        generating IP top_ila3"
+  create_ip -name ila -vendor xilinx.com -library ip -version 6.2 -module_name top_ila3 -dir $ip_dir  >> $log_file
+  set_property -dict [list CONFIG.C_PROBE0_WIDTH {321} CONFIG.C_DATA_DEPTH {1024} CONFIG.C_TRIGOUT_EN {false} CONFIG.C_TRIGIN_EN {false}] [get_ips top_ila3]
+  set_property generate_synth_checkpoint false [get_files $ip_dir/top_ila3/top_ila3.xci]
+  generate_target {instantiation_template}     [get_files $ip_dir/top_ila3/top_ila3.xci] >> $log_file
+  generate_target all                          [get_files $ip_dir/top_ila3/top_ila3.xci] >> $log_file
+  export_ip_user_files -of_objects             [get_files $ip_dir/top_ila3/top_ila3.xci] -no_script -force >> $log_file
+  export_simulation    -of_objects             [get_files $ip_dir/top_ila3/top_ila3.xci] -directory $ip_dir/ip_user_files/sim_scripts -force >> $log_file
+
+  puts "                        generating IP top_ila4"
+  create_ip -name ila -vendor xilinx.com -library ip -version 6.2 -module_name top_ila4 -dir $ip_dir  >> $log_file
+  set_property -dict [list CONFIG.C_PROBE0_WIDTH {355} CONFIG.C_DATA_DEPTH {1024} CONFIG.C_TRIGOUT_EN {false} CONFIG.C_TRIGIN_EN {false}] [get_ips top_ila4]
+  set_property generate_synth_checkpoint false [get_files $ip_dir/top_ila4/top_ila4.xci]
+  generate_target {instantiation_template}     [get_files $ip_dir/top_ila4/top_ila4.xci] >> $log_file
+  generate_target all                          [get_files $ip_dir/top_ila4/top_ila4.xci] >> $log_file
+  export_ip_user_files -of_objects             [get_files $ip_dir/top_ila4/top_ila4.xci] -no_script -force >> $log_file
+  export_simulation    -of_objects             [get_files $ip_dir/top_ila4/top_ila4.xci] -directory $ip_dir/ip_user_files/sim_scripts -force >> $log_file
+
+  puts "                        generating IP top_ila5"
+  create_ip -name ila -vendor xilinx.com -library ip -version 6.2 -module_name top_ila5 -dir $ip_dir  >> $log_file
+  set_property -dict [list CONFIG.C_PROBE0_WIDTH {573} CONFIG.C_DATA_DEPTH {1024} CONFIG.C_TRIGOUT_EN {false} CONFIG.C_TRIGIN_EN {false}] [get_ips top_ila5]
+  set_property generate_synth_checkpoint false [get_files $ip_dir/top_ila5/top_ila5.xci]
+  generate_target {instantiation_template}     [get_files $ip_dir/top_ila5/top_ila5.xci] >> $log_file
+  generate_target all                          [get_files $ip_dir/top_ila5/top_ila5.xci] >> $log_file
+  export_ip_user_files -of_objects             [get_files $ip_dir/top_ila5/top_ila5.xci] -no_script -force >> $log_file
+  export_simulation    -of_objects             [get_files $ip_dir/top_ila5/top_ila5.xci] -directory $ip_dir/ip_user_files/sim_scripts -force >> $log_file
+
+  puts "                        generating IP top_ila6"
+  create_ip -name ila -vendor xilinx.com -library ip -version 6.2 -module_name top_ila6 -dir $ip_dir  >> $log_file
+  set_property -dict [list CONFIG.C_PROBE0_WIDTH {639} CONFIG.C_DATA_DEPTH {1024} CONFIG.C_TRIGOUT_EN {false} CONFIG.C_TRIGIN_EN {false}] [get_ips top_ila6]
+  set_property generate_synth_checkpoint false [get_files $ip_dir/top_ila6/top_ila6.xci]
+  generate_target {instantiation_template}     [get_files $ip_dir/top_ila6/top_ila6.xci] >> $log_file
+  generate_target all                          [get_files $ip_dir/top_ila6/top_ila6.xci] >> $log_file
+  export_ip_user_files -of_objects             [get_files $ip_dir/top_ila6/top_ila6.xci] -no_script -force >> $log_file
+  export_simulation    -of_objects             [get_files $ip_dir/top_ila6/top_ila6.xci] -directory $ip_dir/ip_user_files/sim_scripts -force >> $log_file
+
 # User IPs
 set action_vhdl  $action_root/hw/vhdl
 
